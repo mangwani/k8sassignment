@@ -20,7 +20,7 @@ spec:
         - containerPort: 5432
         volumeMounts:
         - name: gaurav-postgres-storage
-          mountPath: /var/lib/postgresql/data/gaurav
+          mountPath: /var/lib/postgresql/gaurav
         env:
         - name: POSTGRES_DB
           value: mydatabase
