@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: php-mysql-app
+  namespace: gaurav
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default  # Change as needed
+  syncPolicy:
+    automated:
+      prune: true  # Removes resources that are no longer in Git
+      selfHeal: true  # Fixes drift if resources are modified manually
