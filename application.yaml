@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myappgaurav
-  namespace: gaurav2
+  name: gaurav-hackathon5
+  namespace: default
 spec:
   project: default
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: gaurav
   syncPolicy:
     automated:
       prune: true
