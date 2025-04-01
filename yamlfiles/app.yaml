@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-server
+  name: gaurav-web-server
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: web-server
+      app: gaurav-web-server
   template:
     metadata:
       labels:
-        app: web-server
+        app: gaurav-web-server
     spec:
       containers:
-      - name: web-server
+      - name: gaurav-web-server
         image: mangwani/k8sassignment:webserverv10.0
         ports:
         - containerPort: 80
