@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: postgres-db
+  name: gaurav-postgres-db
 spec:
-  serviceName: "postgres"
+  serviceName: "gaurav-postgres"
   replicas: 1
   selector:
     matchLabels:
-      app: postgres
+      app: gaurav-postgres
   template:
     metadata:
       labels:
-        app: postgres
+        app: gaurav-postgres
     spec:
       containers:
-      - name: postgres
+      - name: gaurav-postgres
         image: mangwani/k8sassignment:dbserverv10.0
         ports:
         - containerPort: 5432
         volumeMounts:
-        - name: postgres-storage
+        - name: gaurav-postgres-storage
           mountPath: /var/lib/postgresql/data
         env:
         - name: POSTGRES_DB
@@ -33,7 +33,7 @@ spec:
               key: POSTGRES_PASSWORD
   volumeClaimTemplates:
   - metadata:
-      name: postgres-storage
+      name: gaurav-postgres-storage
     spec:
       accessModes: ["ReadWriteOnce"]
       resources:
