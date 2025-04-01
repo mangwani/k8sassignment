@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: web-server
-        image: nginx:latest
+        image: mangwani/k8sassignment:webserverv10.0
         ports:
         - containerPort: 80
