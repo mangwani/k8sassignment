@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: mangwani/k8sassignment:dbserverv5.0
+        image: mangwani/k8sassignment:dbserverv10.0
         ports:
         - containerPort: 5432
         volumeMounts:
