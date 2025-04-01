@@ -11,4 +11,4 @@ spec:
     - protocol: TCP
       port: 80            # The port exposed by the service
       targetPort: 80       # The port on the container to which the service forwards traffic
-  type: LoadBalancer      # Type LoadBalancer will expose the service externally
+  type: NodePort      # Type LoadBalancer will expose the service externally
