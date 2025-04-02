@@ -19,7 +19,7 @@ spec:
         ports:
         - containerPort: 5432
         volumeMounts:
-        - name: gaurav-postgres-storage
+        - name: gaurav-postgres-pvc
           mountPath: /var/lib/postgresql/gaurav
         env:
         - name: POSTGRES_DB
@@ -31,11 +31,8 @@ spec:
             secretKeyRef:
               name: db-secret
               key: POSTGRES_PASSWORD
-  volumeClaimTemplates:
-  - metadata:
-      name: gaurav-postgres-storage
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      resources:
-        requests:
-          storage: 1Gi
+  volumeClaimTemplates: []
+  volumes:
+    - name: postgresql-storage
+      persistentVolumeClaim:
+        claimName: gaurav-postgres-pvc
