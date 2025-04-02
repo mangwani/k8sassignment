@@ -31,11 +31,8 @@ spec:
             secretKeyRef:
               name: db-secret
               key: POSTGRES_PASSWORD
-  volumeClaimTemplates:
-  - metadata:
-      name: gaurav-postgres-storage
-    spec:
-      accessModes: ["ReadWriteOnce"]
-      resources:
-        requests:
-          storage: 1Gi
+  volumeClaimTemplates: []
+  volumes:
+    - name: gaurav-postgres-pvc-storage
+      persistentVolumeClaim:
+        claimName: gaurav-postgres-pvc
