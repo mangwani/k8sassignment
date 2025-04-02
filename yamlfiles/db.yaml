@@ -19,7 +19,7 @@ spec:
         ports:
         - containerPort: 5432
         volumeMounts:
-        - name: gaurav-postgres-pvc-vol
+        - name: pvc-0f694a22-f378-47b4-ba5a-5e5975f609fb
           mountPath: /var/lib/postgresql/gaurav
         env:
         - name: POSTGRES_DB
@@ -33,6 +33,6 @@ spec:
               key: POSTGRES_PASSWORD
   volumeClaimTemplates: []
   volumes:
-    - name: gaurav-postgres-pvc-vol
+    - name: pvc-0f694a22-f378-47b4-ba5a-5e5975f609fb
       persistentVolumeClaim:
         claimName: gaurav-postgres-pvc
