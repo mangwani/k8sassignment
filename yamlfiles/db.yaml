@@ -13,13 +13,17 @@ spec:
       labels:
         app: gaurav-postgres
     spec:
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: gaurav-postgres-pvc
       containers:
       - name: gaurav-postgres
         image: mangwani/k8sassignment:dbserverv10.0
         ports:
         - containerPort: 5432
         volumeMounts:
-        - name: gaurav-postgres-pvc
+        - name: postgres-storage
           mountPath: /var/lib/postgresql/gaurav
         env:
         - name: POSTGRES_DB
@@ -31,4 +35,3 @@ spec:
             secretKeyRef:
               name: db-secret
               key: POSTGRES_PASSWORD
-  volumeClaimTemplates: []
