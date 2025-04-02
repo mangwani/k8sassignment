@@ -33,6 +33,6 @@ spec:
               key: POSTGRES_PASSWORD
   volumeClaimTemplates: []
   volumes:
-    - name: postgres-storage
+    - name: postgresql-storage
       persistentVolumeClaim:
         claimName: gaurav-postgres-pvc
