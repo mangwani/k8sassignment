@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: gaurav-web-server
-        image: mangwani/k8sassignment:webserverv10.0
+        image: mangwani/capstone:latest
         ports:
         - containerPort: 80
